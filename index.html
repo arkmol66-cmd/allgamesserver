@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALL GAMES Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(0,0,0,0.3) !important;
+            backdrop-filter: blur(10px);
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
+        }
+        .server-card {
+            transition: transform 0.3s ease;
+        }
+        .server-card:hover {
+            transform: translateY(-5px);
+        }
+        .status-online {
+            color: #28a745;
+        }
+        .status-offline {
+            color: #dc3545;
+        }
+        .hero-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .feature-card {
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .download-section {
+            background: rgba(0,0,0,0.2);
+            padding: 40px 0;
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-gamepad me-2"></i>
+                ALL GAMES Server
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#features">Recursos</a>
+                <a class="nav-link" href="#download">Download</a>
+                <a class="nav-link" href="#demo">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">
+                <i class="fas fa-gamepad me-3"></i>
+                ALL GAMES Server
+            </h1>
+            <p class="lead mb-5">
+                Servidor de jogos automático que cria IPs dinâmicos e servidores personalizados para cada jogador
+            </p>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-4">
+                    <div class="card bg-success bg-opacity-25 mb-3">
+                        <div class="card-body text-center">
+                            <h4><i class="fas fa-server"></i></h4>
+                            <h5>Servidor Automático</h5>
+                            <small>Cada jogador recebe seu próprio servidor</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-info bg-opacity-25 mb-3">
+                        <div class="card-body text-center">
+                            <h4><i class="fas fa-network-wired"></i></h4>
+                            <h5>IP Dinâmico</h5>
+                            <small>IPs gerados automaticamente</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-warning bg-opacity-25 mb-3">
+                        <div class="card-body text-center">
+                            <h4><i class="fas fa-comments"></i></h4>
+                            <h5>Chat Global</h5>
+                            <small>Comunicação em tempo real</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container my-5">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-star me-2"></i>
+            Recursos Principais
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-magic fa-3x mb-3 text-primary"></i>
+                        <h5>Criação Automática</h5>
+                        <p>Servidores criados automaticamente com nome "ALL GAMES - {USERNAME}"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-globe fa-3x mb-3 text-success"></i>
+                        <h5>IP Dinâmico</h5>
+                        <p>Detecção automática de IP local e geração de portas disponíveis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tachometer-alt fa-3x mb-3 text-info"></i>
+                        <h5>Dashboard</h5>
+                        <p>Interface web moderna com estatísticas em tempo real</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt fa-3x mb-3 text-warning"></i>
+                        <h5>Tempo Real</h5>
+                        <p>SignalR para comunicação instantânea e atualizações ao vivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="container">
+        <div class="download-section text-center">
+            <h2 class="mb-4">
+                <i class="fas fa-download me-2"></i>
+                Download & Instalação
+            </h2>
+            <p class="lead mb-4">Baixe o código fonte e execute em sua máquina</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="fab fa-github me-2"></i>GitHub Repository</h5>
+                            <p>Clone o repositório e execute localmente:</p>
+                            <div class="bg-dark p-3 rounded mb-3">
+                                <code class="text-light">
+                                    git clone https://github.com/SEU_USUARIO/all-games-server.git<br>
+                                    cd all-games-server/AllGamesServer<br>
+                                    dotnet run
+                                </code>
+                            </div>
+                            <a href="https://github.com" class="btn btn-primary btn-lg">
+                                <i class="fab fa-github me-2"></i>
+                                Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6><i class="fas fa-cog me-2"></i>Requisitos</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>.NET 8 SDK</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Windows/Linux/macOS</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Navegador moderno</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6><i class="fas fa-rocket me-2"></i>Tecnologias</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-dot-circle text-primary me-2"></i>ASP.NET Core</li>
+                                <li><i class="fas fa-dot-circle text-primary me-2"></i>SignalR</li>
+                                <li><i class="fas fa-dot-circle text-primary me-2"></i>Bootstrap 5</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="container my-5">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-play me-2"></i>
+            Demo Interativo
+        </h2>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="fas fa-gamepad me-2"></i>Simulador ALL GAMES Server</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center mb-4">
+                            <div class="col-md-4">
+                                <div class="card bg-success bg-opacity-25">
+                                    <div class="card-body">
+                                        <h4><i class="fas fa-users"></i></h4>
+                                        <h5 id="onlineCount">0</h5>
+                                        <small>Jogadores Online</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-info bg-opacity-25">
+                                    <div class="card-body">
+                                        <h4><i class="fas fa-server"></i></h4>
+                                        <h5 id="serverCount">0</h5>
+                                        <small>Servidores Ativos</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-warning bg-opacity-25">
+                                    <div class="card-body">
+                                        <h4><i class="fas fa-network-wired"></i></h4>
+                                        <h5>192.168.1.100</h5>
+                                        <small>IP do Servidor</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6>Conectar ao Servidor (Demo)</h6>
+                            <div class="input-group">
+                                <input type="text" id="usernameInput" class="form-control" placeholder="Digite seu nome de usuário">
+                                <button class="btn btn-primary" id="connectBtn">
+                                    <i class="fas fa-plug me-1"></i>Conectar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="connectionStatus" class="alert d-none"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-comments me-2"></i>Chat Demo</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="chatMessages" style="height: 200px; overflow-y: auto; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 5px;">
+                            <div class="text-muted">Esta é uma demonstração. Para funcionalidade completa, baixe e execute o servidor.</div>
+                        </div>
+                        <div class="input-group mt-3">
+                            <input type="text" id="messageInput" class="form-control" placeholder="Digite sua mensagem..." disabled>
+                            <button class="btn btn-primary" id="sendBtn" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-list me-2"></i>Servidores Demo</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="serversList">
+                            <div class="text-muted">Nenhum servidor ativo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h6><i class="fas fa-users me-2"></i>Jogadores Demo</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="playersList">
+                            <div class="text-muted">Nenhum jogador online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-dark bg-opacity-50 py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6><i class="fas fa-gamepad me-2"></i>ALL GAMES Server</h6>
+                    <p class="text-muted">Servidor de jogos automático com IP dinâmico</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="text-muted">
+                        Feito com <i class="fas fa-heart text-danger"></i> usando .NET 8
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>
